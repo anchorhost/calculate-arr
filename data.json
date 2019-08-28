@@ -10,490 +10,490 @@
           "Product": "Accounting",
           "Type": "People",
           "Price": "$200.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$2400.00"
         },
         {
           "Product": "Admin Columns Pro",
           "Type": "Plugins",
           "Price": "$71.40",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$71.40"
         },
         {
           "Product": "Adobe",
           "Type": "Software",
           "Price": "$56.17",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$674.04"
         },
         {
           "Product": "Akismet Enterprise",
           "Type": "Plugins",
           "Price": "$550.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$550.00"
         },
         {
           "Product": "Amazon S3",
           "Type": "Hosting",
           "Price": "$20.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$240.00"
         },
         {
           "Product": "Backblaze B2",
           "Type": "Hosting",
           "Price": "$110.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$1320.00"
         },
         {
           "Product": "Backblaze Backup",
           "Type": "Software",
           "Price": "$165.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$165.00"
         },
         {
           "Product": "Browserstack",
           "Type": "Software",
           "Price": "$150.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$150.00"
         },
         {
           "Product": "Car",
           "Type": "Other",
           "Price": "$200.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$2400.00"
         },
         {
           "Product": "Constellix",
           "Type": "Hosting",
           "Price": "$200.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$2,400.00"
         },
         {
           "Product": "Consultants",
           "Type": "People",
           "Price": "$225.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$2700.00"
         },
         {
           "Product": "Copywriting",
           "Type": "People",
           "Price": "$75.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$900.00"
         },
         {
           "Product": "Coworking",
           "Type": "Other",
           "Price": "$75.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$900.00"
         },
         {
           "Product": "DigitalOcean",
           "Type": "Hosting",
           "Price": "$20.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$240.00"
         },
         {
           "Product": "Domains",
           "Type": "Hosting",
           "Price": "$11.00",
-          "Quanity": "800",
+          "Quantity": "800",
           "Total": "$8800.00"
         },
         {
           "Product": "Dropbox",
           "Type": "Software",
           "Price": "$895.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$895.00"
         },
         {
           "Product": "Event Espresso (EE4 Developer License)",
           "Type": "Plugins",
           "Price": "$259.85",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$259.85"
         },
         {
           "Product": "Fathom",
           "Type": "Software",
           "Price": "$20.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$240.00"
         },
         {
           "Product": "FooBox (5 sites)",
           "Type": "Plugins",
           "Price": "$67.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$67.00"
         },
         {
           "Product": "Google Apps",
           "Type": "Software",
           "Price": "$60.00",
-          "Quanity": 3,
+          "Quantity": 3,
           "Total": "$180.00"
         },
         {
           "Product": "Google Cloud",
           "Type": "Hosting",
           "Price": "$350.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$4200.00"
         },
         {
           "Product": "Gravity Forms",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "Health Share",
           "Type": "Other",
           "Price": "$335.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$4020.00"
         },
         {
           "Product": "Internet",
           "Type": "Other",
           "Price": "$110.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$1320.00"
         },
         {
           "Product": "KeyCDN",
           "Type": "Hosting",
           "Price": "$49.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$49.00"
         },
         {
           "Product": "Kinsta - Custom Plan 1100 sites",
           "Type": "Hosting",
           "Price": "$82,500.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$82500.00"
         },
         {
           "Product": "Kinsta - Upgrade planning",
           "Type": "Hosting",
           "Price": "$10,000.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$10000.00"
         },
         {
           "Product": "Laptops",
           "Type": "Other",
           "Price": "$200.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$2400.00"
         },
         {
           "Product": "Legal",
           "Type": "Other",
           "Price": "$40.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$480.00"
         },
         {
           "Product": "Life Insurance",
           "Type": "Other",
           "Price": "$120.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$1440.00"
         },
         {
           "Product": "Mailgun",
           "Type": "Software",
           "Price": "$65.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$780.00"
         },
         {
           "Product": "Meals",
           "Type": "Other",
           "Price": "$200.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$2400.00"
         },
         {
           "Product": "MediaTemple GRID",
           "Type": "Hosting",
           "Price": "$240.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$240.00"
         },
         {
           "Product": "MemberPress",
           "Type": "Plugins",
           "Price": "$199.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$199.00"
         },
         {
           "Product": "Missive",
           "Type": "Software",
           "Price": "$12.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$144.00"
         },
         {
           "Product": "Modern Tribe Community Events",
           "Type": "Plugins",
           "Price": "$62.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$62.00"
         },
         {
           "Product": "Modern Tribe Facebook Events",
           "Type": "Plugins",
           "Price": "$34.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$34.00"
         },
         {
           "Product": "Modern Tribe Filter Bar",
           "Type": "Plugins",
           "Price": "$62.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$62.00"
         },
         {
           "Product": "Modern Tribe The Event Calendar",
           "Type": "Plugins",
           "Price": "$525.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$525.00"
         },
         {
           "Product": "Organic Themes Developer Pack",
           "Type": "Themes",
           "Price": "$199.20",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$199.20"
         },
         {
           "Product": "Other WordPress themes and plugins",
           "Type": "Other",
           "Price": "$2,500.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$2,500.00"
         },
         {
           "Product": "Phone",
           "Type": "Other",
           "Price": "$120.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$1440.00"
         },
         {
           "Product": "Post Status",
           "Type": "Community",
           "Price": "$99.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.00"
         },
         {
           "Product": "Salary + benefits (1 employee)",
           "Type": "People",
           "Price": "$72000.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$72000.00"
         },
         {
           "Product": "Seanwes Community",
           "Type": "Community",
           "Price": "$390.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$390.00"
         },
         {
           "Product": "SearchWP",
           "Type": "Plugins",
           "Price": "$249.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$249.00"
         },
         {
           "Product": "Soundcloud",
           "Type": "Hosting",
           "Price": "$121.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$121.50"
         },
         {
           "Product": "Statuspage (statuspage.io)",
           "Type": "Software",
           "Price": "$228.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$228.00"
         },
         {
           "Product": "Stripe fees",
           "Type": "Hosting",
           "Price": "$6,500.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$6500.00"
         },
         {
           "Product": "ThemeFuse ClubMember",
           "Type": "Themes",
           "Price": "$195.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$195.00"
         },
         {
           "Product": "Travel",
           "Type": "Community",
           "Price": "$1000",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$1000.00"
         },
         {
           "Product": "Video User Manuals",
           "Type": "Plugins",
           "Price": "$144.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$144.00"
         },
         {
           "Product": "Vimeo Pro",
           "Type": "Software",
           "Price": "$59.95",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$59.95"
         },
         {
           "Product": "WP Engine dedicated P1.5",
           "Type": "Hosting",
           "Price": "$8,280.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$8,280.00"
         },
         {
           "Product": "WP Migrate DB Pro (100 installs)",
           "Type": "Plugins",
           "Price": "$249.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$249.00"
         },
         {
           "Product": "WP Offload S3 Adamantium",
           "Type": "Plugins",
           "Price": "$399.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$399.00"
         },
         {
           "Product": "WP Touch Pro",
           "Type": "Plugins",
           "Price": "$107.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$107.00"
         },
         {
           "Product": "WPMU Dev",
           "Type": "Plugins",
           "Price": "$588.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$588.00"
         },
         {
           "Product": "WooCommerce All Theme Package",
           "Type": "Themes",
           "Price": "$199.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$199.50"
         },
         {
           "Product": "WooCommerce Authorize.net AIM (25 Sites)",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "WooCommerce BluePay Payment Gateway",
           "Type": "Plugins",
           "Price": "$39.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$39.50"
         },
         {
           "Product": "WooCommerce Dynamic Pricing",
           "Type": "Plugins",
           "Price": "$64.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$64.50"
         },
         {
           "Product": "WooCommerce FedEx (25 sites)",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "WooCommerce Ignite Gift Certificates Pro",
           "Type": "Plugins",
           "Price": "$44.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$44.50"
         },
         {
           "Product": "WooCommerce Order/Customer CSV Export",
           "Type": "Plugins",
           "Price": "$24.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$24.50"
         },
         {
           "Product": "WooCommerce Shipping Multiple Addresses",
           "Type": "Plugins",
           "Price": "$24.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$24.50"
         },
         {
           "Product": "WooCommerce UPS (25 sites)",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "WooCommerce USPS (25 sites)",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "WordCamps and Meetups",
           "Type": "Community",
           "Price": "$50.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$600.00"
         },
         {
           "Product": "Xero",
           "Type": "Software",
           "Price": "$37.05",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$444.60"
         }
       ]
@@ -507,476 +507,476 @@
           "Product": "Admin Columns Pro",
           "Type": "Plugins",
           "Price": "$71.40",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$71.40"
         },
         {
           "Product": "Adobe",
           "Type": "Software",
           "Price": "$56.17",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$674.04"
         },
         {
           "Product": "Akismet Enterprise",
           "Type": "Plugins",
           "Price": "$550.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$550.00"
         },
         {
           "Product": "Amazon S3",
           "Type": "Hosting",
           "Price": "$20.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$240.00"
         },
         {
           "Product": "Backblaze B2",
           "Type": "Hosting",
           "Price": "$110.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$1320.00"
         },
         {
           "Product": "Backblaze Backup",
           "Type": "Software",
           "Price": "$165.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$165.00"
         },
         {
           "Product": "Browserstack",
           "Type": "Software",
           "Price": "$150.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$150.00"
         },
         {
           "Product": "Car",
           "Type": "Other",
           "Price": "$200.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$2400.00"
         },
         {
           "Product": "Constellix",
           "Type": "Hosting",
           "Price": "$200.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$2,400.00"
         },
         {
           "Product": "Consultants",
           "Type": "People",
           "Price": "$500.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$6000.00"
         },
         {
           "Product": "Coworking",
           "Type": "Other",
           "Price": "$75.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$900.00"
         },
         {
           "Product": "DigitalOcean",
           "Type": "Hosting",
           "Price": "$20.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$240.00"
         },
         {
           "Product": "Domains",
           "Type": "Hosting",
           "Price": "$11.00",
-          "Quanity": "800",
+          "Quantity": "800",
           "Total": "$8800.00"
         },
         {
           "Product": "Dropbox",
           "Type": "Software",
           "Price": "$895.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$895.00"
         },
         {
           "Product": "Event Espresso (EE4 Developer License)",
           "Type": "Plugins",
           "Price": "$259.85",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$259.85"
         },
         {
           "Product": "Fathom",
           "Type": "Software",
           "Price": "$20.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$240.00"
         },
         {
           "Product": "FooBox (5 sites)",
           "Type": "Plugins",
           "Price": "$67.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$67.00"
         },
         {
           "Product": "Google Apps",
           "Type": "Software",
           "Price": "$60.00",
-          "Quanity": 3,
+          "Quantity": 3,
           "Total": "$180.00"
         },
         {
           "Product": "Google Cloud",
           "Type": "Hosting",
           "Price": "$350.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$4200.00"
         },
         {
           "Product": "Gravity Forms",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "Health Share",
           "Type": "Other",
           "Price": "$335.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$4020.00"
         },
         {
           "Product": "Internet",
           "Type": "Other",
           "Price": "$110.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$1320.00"
         },
         {
           "Product": "KeyCDN",
           "Type": "Hosting",
           "Price": "$49.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$49.00"
         },
         {
           "Product": "Kinsta - Custom Plan 1000 sites",
           "Type": "Hosting",
           "Price": "$75,000.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$75000.00"
         },
         {
           "Product": "Kinsta - Upgrade planning",
           "Type": "Hosting",
           "Price": "$10,000.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$10000.00"
         },
         {
           "Product": "Laptops",
           "Type": "Other",
           "Price": "$200.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$2400.00"
         },
         {
           "Product": "Legal",
           "Type": "Other",
           "Price": "$40.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$480.00"
         },
         {
           "Product": "Life Insurance",
           "Type": "Other",
           "Price": "$120.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$1440.00"
         },
         {
           "Product": "Mailgun",
           "Type": "Software",
           "Price": "$65.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$780.00"
         },
         {
           "Product": "Meals",
           "Type": "Other",
           "Price": "$200.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$2400.00"
         },
         {
           "Product": "MediaTemple GRID",
           "Type": "Hosting",
           "Price": "$240.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$240.00"
         },
         {
           "Product": "MemberPress",
           "Type": "Plugins",
           "Price": "$199.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$199.00"
         },
         {
           "Product": "Missive",
           "Type": "Software",
           "Price": "$12.00",
-          "Quanity": 12,
+          "Quantity": 12,
           "Total": "$144.00"
         },
         {
           "Product": "Modern Tribe Community Events",
           "Type": "Plugins",
           "Price": "$62.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$62.00"
         },
         {
           "Product": "Modern Tribe Facebook Events",
           "Type": "Plugins",
           "Price": "$34.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$34.00"
         },
         {
           "Product": "Modern Tribe Filter Bar",
           "Type": "Plugins",
           "Price": "$62.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$62.00"
         },
         {
           "Product": "Modern Tribe The Event Calendar",
           "Type": "Plugins",
           "Price": "$525.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$525.00"
         },
         {
           "Product": "Organic Themes Developer Pack",
           "Type": "Themes",
           "Price": "$199.20",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$199.20"
         },
         {
           "Product": "Other WordPress themes and plugins",
           "Type": "Other",
           "Price": "$2,500.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$2,500.00"
         },
         {
           "Product": "Phone",
           "Type": "Other",
           "Price": "$120.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$1440.00"
         },
         {
           "Product": "Post Status",
           "Type": "Community",
           "Price": "$99.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.00"
         },
         {
           "Product": "Salary + benefits (1 employee)",
           "Type": "People",
           "Price": "$72000.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$72000.00"
         },
         {
           "Product": "Seanwes Community",
           "Type": "Community",
           "Price": "$390.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$390.00"
         },
         {
           "Product": "SearchWP",
           "Type": "Plugins",
           "Price": "$249.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$249.00"
         },
         {
           "Product": "Soundcloud",
           "Type": "Hosting",
           "Price": "$121.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$121.50"
         },
         {
           "Product": "Statuspage (statuspage.io)",
           "Type": "Software",
           "Price": "$228.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$228.00"
         },
         {
           "Product": "Stripe fees",
           "Type": "Hosting",
           "Price": "$6,500.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$6500.00"
         },
         {
           "Product": "ThemeFuse ClubMember",
           "Type": "Themes",
           "Price": "$195.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$195.00"
         },
         {
           "Product": "Travel",
           "Type": "Other",
           "Price": "$1000",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$1000.00"
         },
         {
           "Product": "Video User Manuals",
           "Type": "Plugins",
           "Price": "$144.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$144.00"
         },
         {
           "Product": "Vimeo Pro",
           "Type": "Software",
           "Price": "$59.95",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$59.95"
         },
         {
           "Product": "WP Engine dedicated P1.5",
           "Type": "Hosting",
           "Price": "$8,280.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$8,280.00"
         },
         {
           "Product": "WP Migrate DB Pro (100 installs)",
           "Type": "Plugins",
           "Price": "$249.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$249.00"
         },
         {
           "Product": "WP Offload S3 Adamantium",
           "Type": "Plugins",
           "Price": "$399.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$399.00"
         },
         {
           "Product": "WP Touch Pro",
           "Type": "Plugins",
           "Price": "$107.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$107.00"
         },
         {
           "Product": "WPMU Dev",
           "Type": "Plugins",
           "Price": "$588.00",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$588.00"
         },
         {
           "Product": "WooCommerce All Theme Package",
           "Type": "Themes",
           "Price": "$199.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$199.50"
         },
         {
           "Product": "WooCommerce Authorize.net AIM (25 Sites)",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "WooCommerce BluePay Payment Gateway",
           "Type": "Plugins",
           "Price": "$39.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$39.50"
         },
         {
           "Product": "WooCommerce Dynamic Pricing",
           "Type": "Plugins",
           "Price": "$64.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$64.50"
         },
         {
           "Product": "WooCommerce FedEx (25 sites)",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "WooCommerce Ignite Gift Certificates Pro",
           "Type": "Plugins",
           "Price": "$44.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$44.50"
         },
         {
           "Product": "WooCommerce Order/Customer CSV Export",
           "Type": "Plugins",
           "Price": "$24.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$24.50"
         },
         {
           "Product": "WooCommerce Shipping Multiple Addresses",
           "Type": "Plugins",
           "Price": "$24.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$24.50"
         },
         {
           "Product": "WooCommerce UPS (25 sites)",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "WooCommerce USPS (25 sites)",
           "Type": "Plugins",
           "Price": "$99.50",
-          "Quanity": 1,
+          "Quantity": 1,
           "Total": "$99.50"
         },
         {
           "Product": "WordCamps and Meetups",
           "Type": "Community",
           "Price": "$50.00",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$600.00"
         },
         {
           "Product": "Xero",
           "Type": "Software",
           "Price": "$37.05",
-          "Quanity": "12",
+          "Quantity": "12",
           "Total": "$444.60"
         }
       ]

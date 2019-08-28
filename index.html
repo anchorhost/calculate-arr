@@ -114,7 +114,7 @@
                     <div v-for="type in expensesTypes">
                         <p class="ma-3">&nbsp;</p>
                         <v-data-table
-                            :headers='[{text:"Product",value:"product",width:"300px",sortable:false},{"text":"Quanity","value":"quanity",sortable:false},{"text":"Price","value":"price",sortable:false},{"text":"Total","value":"total",sortable:false}]'
+                            :headers='[{text:"Product",value:"product",width:"300px",sortable:false},{"text":"Quantity","value":"quantity",sortable:false},{"text":"Price","value":"price",sortable:false},{"text":"Total","value":"total",sortable:false}]'
                             :items="version.expenses"
                             :custom-filter="filterType"
                             :search='type'
@@ -139,7 +139,7 @@
                         <tbody>
                             <tr v-for="item in items" :key="item.name">
                             <td>{{ item.Product }}</td>
-                            <td>{{ item.Quanity }}</td>
+                            <td>{{ item.Quantity }}</td>
                             <td>{{ item.Price }}</td>
                             <td>{{ item.Total }}</td>
                             </tr>
@@ -147,7 +147,7 @@
                         </template>
                         </v-data-table>
                         <v-data-table
-                            :headers='[{text:"Product",value:"product",width:"300px",sortable:false,sortable:false},{"text":"Type","value":"type",sortable:false},{"text":"Quanity","value":"quanity",sortable:false},{"text":"Price","value":"price",sortable:false},{"text":"Total","value":"total",sortable:false},{"text":"","value":"actions",sortable:false}]'
+                            :headers='[{text:"Product",value:"product",width:"300px",sortable:false,sortable:false},{"text":"Type","value":"type",sortable:false},{"text":"Quantity","value":"quantity",sortable:false},{"text":"Price","value":"price",sortable:false},{"text":"Total","value":"total",sortable:false},{"text":"","value":"actions",sortable:false}]'
                             :items="version.expenses"
                             :custom-filter="filterType"
                             :search='type'
@@ -180,8 +180,8 @@
                             <template v-slot:item.product="{ item }">
                                 <v-text-field label="" v-model="item.Product" :value="item.Product" height="18" style="font-size: 12px;letter-spacing: -0.4px;"></v-text-field>
                             </template>
-                            <template v-slot:item.quanity="{ item }">
-                                <v-text-field label="" v-model="item.Quanity" @input="calculateTotal( item )" :value="item.Quanity" height="18" style="width:28px"></v-text-field>
+                            <template v-slot:item.quantity="{ item }">
+                                <v-text-field label="" v-model="item.Quantity" @input="calculateTotal( item )" :value="item.Quantity" height="18" style="width:28px"></v-text-field>
                             </template>
                             <template v-slot:item.price="{ item }">
                                 <v-text-field label="" v-model="item.Price" @input="calculateTotal( item )" :value="item.Price" height="18" style="width:78px"></v-text-field>
@@ -260,13 +260,13 @@
             return total.toFixed(2);
         },
         addExpense( type ) {
-            this.version.expenses.push( {"Product":"","Type": type ,"Price":"$0","Quanity":1,"Total":"$0"});
+            this.version.expenses.push( {"Product":"","Type": type ,"Price":"$0","Quantity":1,"Total":"$0"});
         },
         removeExpense( item ) {
             this.version.expenses = this.version.expenses.filter( e => e != item );
         },
         calculateTotal( item ) {
-            item.Total = "$" + (item.Quanity * item.Price.replace(/\$/gi, '').replace(/\,/gi, '')).toFixed(2);
+            item.Total = "$" + (item.Quantity * item.Price.replace(/\$/gi, '').replace(/\,/gi, '')).toFixed(2);
         },
         deleteVersion() {
             should_proceed = confirm("Delete this version?");
