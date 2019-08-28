@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+       <v-app-bar
+        color="blue darken-3"
+        dark
+        >
+        <v-toolbar-title>Calculate ARR</v-toolbar-title>
+        <div class="flex-grow-1"></div>
+        
+      </v-app-bar>
+      <v-toolbar dense class="mb-5">
+            Is your Annual Recurring Revenue (ARR) business healthy?
+      </v-toolbar>
+      <v-content>
+        <v-container>
+            <v-layout>
+            <v-flex sm2 mx-3>
+                <h2>Income</h2>
+                <template v-if="view_mode">
+                    <v-text-field v-model="name" label="Business Name" readonly></v-text-field>
+                    <v-select
+                        :items='version_options'
+                        v-model="selected_version"
+                        label="Version"
+                        value="Latest"
+                        @input="changeVersion"
+                        dense
+                    ></v-select>
+                    <v-text-field v-model="version.income" label="Year of revenue" prefix="$" readonly></v-text-field>
+                    <v-text-field
+                        v-model="version.date_start"
+                        label="Start date"
+                        prepend-icon="mdi-calendar"
+                        readonly
+                    ></v-text-field>
+                    <v-text-field
+                        v-model="version.date_end"
+                        label="End date"
+                        prepend-icon="mdi-calendar"
+                        readonly
+                    ></v-text-field>
+                    <v-btn @click="view_mode = !view_mode" block class="my-2" small>Edit Mode</v-btn>
+                    <v-btn @click="exportJSON" block class="my-2" small>Export</v-btn>
+                </template>
+                <template v-else>
+                <v-text-field v-model="name" label="Business Name" readonly></v-text-field>
+                <v-select
+                    :items='version_options'
+                    v-model="selected_version"
+                    label="Version"
+                    value="Latest"
+                    @input="changeVersion()"
+                    dense
+                ></v-select>
+                <v-text-field v-model="version.income" label="Year of revenue" prefix="$"></v-text-field>
+                <v-menu
+                    v-model="version.menu_startdate"
+                    :close-on-content-click="false"
+                    :nudge-right="40"
+                    transition="scale-transition"
+                    offset-y
+                    full-width
+                    min-width="290px"
+                >
+                    <template v-slot:activator="{ on }">
+                    <v-text-field
+                        v-model="version.date_start"
+                        label="Start date"
+                        prepend-icon="mdi-calendar"
+                        readonly
+                        v-on="on"
+                    ></v-text-field>
+                    </template>
+                    <v-date-picker v-model="version.date_start" @input="menu_startdate = false"></v-date-picker>
+                </v-menu>
+                <v-menu
+                    v-model="menu_startdate"
+                    :close-on-content-click="false"
+                    :nudge-right="40"
+                    transition="scale-transition"
+                    offset-y
+                    full-width
+                    min-width="290px"
+                >
+                    <template v-slot:activator="{ on }">
+                    <v-text-field
+                        v-model="version.date_end"
+                        label="End date"
+                        prepend-icon="mdi-calendar"
+                        readonly
+                        v-on="on"
+                    ></v-text-field>
+                    </template>
+                    <v-date-picker v-model="version.date_end" @input="menu_startdate = false; saveVersion()"></v-date-picker>
+                </v-menu>
+                    <v-btn @click="view_mode = !view_mode" block class="my-2" small>View Mode</v-btn>
+                    <v-btn @click="sortByName" block class="my-2" small>Sort expenses</v-btn>
+                    <v-btn @click="duplicateVersion" block class="my-2" small>Duplicate version</v-btn>
+                    <v-btn @click="deleteVersion" block class="my-2" small>Delete version</v-btn>
+                    <v-btn @click="exportJSON" block class="my-2" small>Export</v-btn>
+                </template>
+            </v-flex>
+            <v-flex sm8 mx-3>
+                <h2>Current Fixed Recurring Expenses</h2>
+                    <div v-for="type in expensesTypes">
+                        <p class="ma-3">&nbsp;</p>
+                        <v-data-table
+                            :headers='[{text:"Product",value:"product",width:"300px",sortable:false},{"text":"Quanity","value":"quanity",sortable:false},{"text":"Price","value":"price",sortable:false},{"text":"Total","value":"total",sortable:false}]'
+                            :items="version.expenses"
+                            :custom-filter="filterType"
+                            :search='type'
+                            :items-per-page="-1"
+                            hide-default-footer
+                            dense
+                            class="elevation-1"
+                            style="position:relative"
+                            v-if="view_mode"
+                        >
+                        <template v-slot:top="{ items }">
+                            <div style="position:absolute;top:-25px;width:100%;">
+                                <v-layout>
+                                    <v-flex>{{ type }}</v-flex>
+                                    <v-flex class="text-right">
+                                        <small>{{ items.length }} expenses totaling</small> &nbsp; <strong>${{ total(items) | formatLargeNumbers }}</strong>
+                                    </v-flex>
+                                </v-layout>
+                            </div>
+                        </template>
+                        <template v-slot:body="{ items }">
+                        <tbody>
+                            <tr v-for="item in items" :key="item.name">
+                            <td>{{ item.Product }}</td>
+                            <td>{{ item.Quanity }}</td>
+                            <td>{{ item.Price }}</td>
+                            <td>{{ item.Total }}</td>
+                            </tr>
+                        </tbody>
+                        </template>
+                        </v-data-table>
+                        <v-data-table
+                            :headers='[{text:"Product",value:"product",width:"300px",sortable:false,sortable:false},{"text":"Type","value":"type",sortable:false},{"text":"Quanity","value":"quanity",sortable:false},{"text":"Price","value":"price",sortable:false},{"text":"Total","value":"total",sortable:false},{"text":"","value":"actions",sortable:false}]'
+                            :items="version.expenses"
+                            :custom-filter="filterType"
+                            :search='type'
+                            :items-per-page="-1"
+                            hide-default-footer
+                            dense
+                            class="elevation-1"
+                            style="position:relative"
+                            v-else
+                        >
+                            <template v-slot:top="{ items }">
+                                <div style="position:absolute;top:-25px;width:100%;">
+                                    <v-layout>
+                                        <v-flex>{{ type }}</v-flex>
+                                        <v-flex class="text-right">
+                                            <small>{{ items.length }} expenses totaling</small> &nbsp; <strong>${{ total(items) | formatLargeNumbers }}</strong>
+                                        </v-flex>
+                                    </v-layout>
+                                </div>
+                            </template>
+                            <template v-slot:footer="{ items }">
+                                <div style="position: absolute;bottom: -39px;width: 100%;right: 17px;">
+                                    <v-layout>
+                                    <v-flex class="text-right">
+                                        <v-btn icon @click="addExpense( type )"><v-icon>mdi-plus-circle</v-icon></v-btn>
+                                    </v-flex>
+                                    </v-layout>
+                                </div>
+                            </template>
+                            <template v-slot:item.product="{ item }">
+                                <v-text-field label="" v-model="item.Product" :value="item.Product" height="18" style="font-size: 12px;letter-spacing: -0.4px;"></v-text-field>
+                            </template>
+                            <template v-slot:item.quanity="{ item }">
+                                <v-text-field label="" v-model="item.Quanity" @input="calculateTotal( item )" :value="item.Quanity" height="18" style="width:28px"></v-text-field>
+                            </template>
+                            <template v-slot:item.price="{ item }">
+                                <v-text-field label="" v-model="item.Price" @input="calculateTotal( item )" :value="item.Price" height="18" style="width:78px"></v-text-field>
+                            </template>
+                            <template v-slot:item.type="{ item }">
+                                <v-select label="" :items="expensesTypes" v-model="item.Type" :value="item.Type" dense height="18" style="width:96px"></v-select>
+                            </template>
+                            <template v-slot:item.total="{ item }">
+                                {{ item.Total }}
+                            </template>
+                            <template v-slot:item.actions="{ item }">
+                                <v-btn icon @click="removeExpense( item )"><v-icon>mdi-delete</v-icon></v-btn>
+                            </template>
+                        </v-data-table>
+                        <p class="ma-3">&nbsp;</p>
+                    </div>
+                    <p>&nbsp;</p>
+                    <v-divider class="mb-5"></v-divider>
+            </v-flex>
+            <v-flex sm2 mx-3>
+                <h2>Results</h2>
+                <template v-if="version.income > 0">
+                <p><small>Income: ${{ version.income | formatLargeNumbers }} <br />Expenses: ${{ total( version.expenses ) | formatLargeNumbers }}</small></p>
+                    <div v-if="+version.income > +total( version.expenses )">
+                        <p><small>Revenue</small><br /><span class="green--text">+${{ ( version.income - total( version.expenses ) ).toFixed(2) | formatLargeNumbers }} / year</span></p>
+                        <v-divider class="mb-3"></v-divider>
+                        <p class="green--text">Healthy 👍</p>
+                    </div>
+                    <div v-else class="red--text">
+                        Unhealthy<br />👎
+                    </div>
+                </template>
+                <a ref="export_json" href="#"></a>
+            </v-flex>
+            </v-layout>
+        </v-container>
+      </v-content>
+      <v-footer
+        absolute
+        padless
+        >
+        <v-col
+            class="text-center"
+            cols="12"
+        >
+           <small>Made with ❤️ by <a href="https://austinginder.com" target="_blank">Austin Ginder</a> code on <a href="https://github.com/anchorhost/calculate-arr/">Github</a> - v{{ calculate_arr_version }}</small>
+        </v-col>
+        </v-footer>
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        calculate_arr_version: "1.0",
+        view_mode: true,
+        menu_startdate: false,
+        menu_enddate: false,
+        name: "",
+        selected_version: 0,
+        version_options: [],
+        version: {},
+        versions: [],
+      },
+      methods: {
+        sortByName() {
+            this.version.expenses.sort((a, b) => (a.Product > b.Product) ? 1 : -1);
+        },
+        total( items ) {
+            total = 0;
+            items.map( e => e.Total ).forEach( i => {
+                total = total + +i.replace(/\$/gi, '').replace(/\,/gi, '');
+            });
+            return total.toFixed(2);
+        },
+        addExpense( type ) {
+            this.version.expenses.push( {"Product":"","Type": type ,"Price":"$0","Quanity":1,"Total":"$0"});
+        },
+        removeExpense( item ) {
+            this.version.expenses = this.version.expenses.filter( e => e != item );
+        },
+        calculateTotal( item ) {
+            item.Total = "$" + (item.Quanity * item.Price.replace(/\$/gi, '').replace(/\,/gi, '')).toFixed(2);
+        },
+        deleteVersion() {
+            should_proceed = confirm("Delete this version?");
+            if ( ! should_proceed ) {
+                return;
+            }
+            this.versions.splice( this.selected_version, 1 );
+            this.version = this.versions[0];
+            this.selected_version = 0;
+            this.populateVersions();
+        },
+        duplicateVersion() {
+            this.versions.unshift( this.versions[ this.selected_version ] );
+            this.populateVersions();
+            this.selected_version = 0;
+        },
+        changeVersion() {
+            this.version = this.versions[ this.selected_version ];
+        },
+        saveVersion() {
+            this.versions[ this.selected_version ] = JSON.parse(JSON.stringify( this.version  ) );
+            this.populateVersions();
+        },
+        groupBy(xs, key) {
+            return xs.reduce(function(rv, x) {
+                (rv[x[key]] = rv[x[key]] || []).push(x);
+                return rv;
+            }, {});
+        },
+        filterType( value, search, item ) {
+            return item.Type == search
+        },
+        exportJSON() {
+            this.$refs.export_json.download = "data.json";
+            this.$refs.export_json.href = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
+                name: this.name,
+                versions: this.versions
+            }, null, 2));
+            this.$refs.export_json.click();
+        },
+        populateVersions() {
+            this.version_options = this.versions.map( ( v, i ) => {
+                item = { value: i, text: v.date_end };
+                return item;
+            })
+        }
+      },
+      filters: {
+        formatLargeNumbers: function (number) {
+			if ( isNaN(number) || number == null ) {
+				return null;
+			} else {
+				return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+			}
+		},
+      },
+      mounted() {
+        fetch('data.json')
+            .then(r => r.json())
+            .then(json => {
+                if ( json.name ) {
+                    this.name = json.name
+                }
+                if ( json.versions ) {
+                    this.versions = json.versions
+                    this.version = this.versions[0];
+                    this.populateVersions();
+                }
+            })
+      },
+      computed: {
+        expensesByType() {
+            if ( typeof this.version.expenses == 'object' ) {
+                return this.groupBy( this.version.expenses, 'Type' );
+            }
+            return [];
+        },
+        expensesTypes() {
+            return Object.keys( this.expensesByType ).sort();
+        }
+      },
+      vuetify: new Vuetify(),
+    })
+  </script>
+</body>
+</html>
