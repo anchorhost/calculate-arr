@@ -23,7 +23,7 @@
       <v-content>
         <v-container>
             <v-row no-gutters>
-            <v-col xs="12" sm="2" class="px-2">
+            <v-col sm="12" md="2" class="px-2">
                 <h2>Income</h2>
                 <template v-if="view_mode">
                     <v-text-field v-model="name" label="Business Name" readonly></v-text-field>
@@ -109,7 +109,7 @@
                     <v-btn @click="exportJSON" block class="my-2" small>Export</v-btn>
                 </template>
             </v-col>
-            <v-col xs="12" sm="8" class="px-3">
+            <v-col sm="12" md="8" class="px-3">
                 <h2>Current Fixed Recurring Expenses</h2>
                     <div v-for="type in expensesTypes">
                         <p class="ma-3">&nbsp;</p>
@@ -201,7 +201,7 @@
                     <p>&nbsp;</p>
                     <v-divider class="mb-5"></v-divider>
             </v-col>
-            <v-col xs="12" sm="2" class="px-3">
+            <v-col sm="12" md="2" class="px-3">
                 <h2>Results</h2>
                 <template v-if="version.income > 0">
                 <p><small>Income: ${{ version.income | formatLargeNumbers }} <br />Expenses: ${{ total( version.expenses ) | formatLargeNumbers }}</small></p>
