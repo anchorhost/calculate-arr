@@ -22,8 +22,8 @@
       </v-toolbar>
       <v-content>
         <v-container>
-            <v-layout>
-            <v-flex sm2 mx-3>
+            <v-row no-gutters>
+            <v-col xs="12" sm="2" class="px-2">
                 <h2>Income</h2>
                 <template v-if="view_mode">
                     <v-text-field v-model="name" label="Business Name" readonly></v-text-field>
@@ -108,8 +108,8 @@
                     <v-btn @click="deleteVersion" block class="my-2" small>Delete version</v-btn>
                     <v-btn @click="exportJSON" block class="my-2" small>Export</v-btn>
                 </template>
-            </v-flex>
-            <v-flex sm8 mx-3>
+            </v-col>
+            <v-col xs="12" sm="8" class="px-3">
                 <h2>Current Fixed Recurring Expenses</h2>
                     <div v-for="type in expensesTypes">
                         <p class="ma-3">&nbsp;</p>
@@ -200,8 +200,8 @@
                     </div>
                     <p>&nbsp;</p>
                     <v-divider class="mb-5"></v-divider>
-            </v-flex>
-            <v-flex sm2 mx-3>
+            </v-col>
+            <v-col xs="12" sm="2" class="px-3">
                 <h2>Results</h2>
                 <template v-if="version.income > 0">
                 <p><small>Income: ${{ version.income | formatLargeNumbers }} <br />Expenses: ${{ total( version.expenses ) | formatLargeNumbers }}</small></p>
