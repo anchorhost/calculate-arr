@@ -5,6 +5,11 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <style>
+    .v-application td > p:last-child {
+        margin-bottom: 0px;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -138,7 +143,7 @@
                         <template v-slot:body="{ items }">
                         <tbody>
                             <tr v-for="item in items" :key="item.name">
-                            <td>{{ item.Product }}</td>
+                            <td v-html="compiledMarkdown( item.Product )"></td>
                             <td>{{ item.Quantity }}</td>
                             <td>{{ item.Price }}</td>
                             <td>{{ item.Total }}</td>
@@ -232,6 +237,7 @@
         </v-footer>
     </v-app>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
   <script>
@@ -312,16 +318,19 @@
                 item = { value: i, text: v.date_end };
                 return item;
             })
-        }
+        },
+        compiledMarkdown( string ) {
+            return marked(string).replace(/<a href="/gi, '<a target="_blank" href="');
+        },
       },
       filters: {
         formatLargeNumbers: function (number) {
-			if ( isNaN(number) || number == null ) {
-				return null;
-			} else {
-				return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-			}
-		},
+            if ( isNaN(number) || number == null ) {
+                return null;
+            } else {
+                return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+            }
+        },
       },
       mounted() {
         fetch('data.json')
