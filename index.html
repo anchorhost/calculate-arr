@@ -85,7 +85,7 @@
                 ></v-select>
                 <v-text-field v-model="version.income" label="Year of revenue" prefix="$"></v-text-field>
                 <v-menu
-                    v-model="version.menu_startdate"
+                    v-model="menu_startdate"
                     :close-on-content-click="false"
                     :nudge-right="40"
                     transition="scale-transition"
@@ -105,7 +105,7 @@
                     <v-date-picker v-model="version.date_start" @input="menu_startdate = false"></v-date-picker>
                 </v-menu>
                 <v-menu
-                    v-model="menu_startdate"
+                    v-model="menu_enddate"
                     :close-on-content-click="false"
                     :nudge-right="40"
                     transition="scale-transition"
@@ -122,7 +122,7 @@
                         v-on="on"
                     ></v-text-field>
                     </template>
-                    <v-date-picker v-model="version.date_end" @input="menu_startdate = false; saveVersion()"></v-date-picker>
+                    <v-date-picker v-model="version.date_end" @input="menu_enddate = false; saveVersion()"></v-date-picker>
                 </v-menu>
                     <v-list dense color="#fafafa" style="padding:0px;">
                         <v-subheader>ACTIONS</v-subheader>
