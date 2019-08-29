@@ -7,14 +7,14 @@
       "income": "252374.14",
       "expenses": [
         {
-          "Product": "Accounting",
+          "Product": "[Accounting](https://kauffmancpa.com/)",
           "Type": "People",
           "Price": "$200.00",
           "Quantity": "12",
           "Total": "$2400.00"
         },
         {
-          "Product": "Admin Columns Pro",
+          "Product": "[Admin Columns Pro](https://www.admincolumns.com/)",
           "Type": "Plugins",
           "Price": "$71.40",
           "Quantity": 1,
@@ -28,7 +28,7 @@
           "Total": "$674.04"
         },
         {
-          "Product": "Akismet Enterprise",
+          "Product": "[Akismet Enterprise](https://akismet.com/)",
           "Type": "Plugins",
           "Price": "$550.00",
           "Quantity": 1,
@@ -70,7 +70,7 @@
           "Total": "$2400.00"
         },
         {
-          "Product": "Constellix",
+          "Product": "[Constellix](https://constellix.com/)",
           "Type": "Hosting",
           "Price": "$200.00",
           "Quantity": 12,
@@ -84,28 +84,28 @@
           "Total": "$2700.00"
         },
         {
-          "Product": "Copywriting",
+          "Product": "[Copywriting](https://briangunzenhauser.com/)",
           "Type": "People",
           "Price": "$75.00",
           "Quantity": "12",
           "Total": "$900.00"
         },
         {
-          "Product": "Coworking",
+          "Product": "[Coworking](https://candyissweet.com/)",
           "Type": "Other",
           "Price": "$75.00",
           "Quantity": "12",
           "Total": "$900.00"
         },
         {
-          "Product": "DigitalOcean",
+          "Product": "[DigitalOcean](https://m.do.co/c/a948075b2ea9)",
           "Type": "Hosting",
           "Price": "$20.00",
           "Quantity": "12",
           "Total": "$240.00"
         },
         {
-          "Product": "Domains",
+          "Product": "[Domains](https://hover.com/D1JkQIB8)",
           "Type": "Hosting",
           "Price": "$11.00",
           "Quantity": "800",
@@ -119,28 +119,28 @@
           "Total": "$895.00"
         },
         {
-          "Product": "Event Espresso (EE4 Developer License)",
+          "Product": "[Event Espresso (EE4 Developer License)](https://eventespresso.com/)",
           "Type": "Plugins",
           "Price": "$259.85",
           "Quantity": 1,
           "Total": "$259.85"
         },
         {
-          "Product": "Fathom",
+          "Product": "[Fathom](https://github.com/usefathom/fathom)",
           "Type": "Software",
           "Price": "$20.00",
           "Quantity": 12,
           "Total": "$240.00"
         },
         {
-          "Product": "FooBox (5 sites)",
+          "Product": "[FooBox (5 sites)](https://fooplugins.com/foobox/)",
           "Type": "Plugins",
           "Price": "$67.00",
           "Quantity": 1,
           "Total": "$67.00"
         },
         {
-          "Product": "Google Apps",
+          "Product": "[Google Apps](http://goo.gl/ytQmgX)",
           "Type": "Software",
           "Price": "$60.00",
           "Quantity": 3,
@@ -154,7 +154,7 @@
           "Total": "$4200.00"
         },
         {
-          "Product": "Gravity Forms",
+          "Product": "[Gravity Forms](https://www.gravityforms.com/)",
           "Type": "Plugins",
           "Price": "$99.50",
           "Quantity": 1,
@@ -182,7 +182,7 @@
           "Total": "$49.00"
         },
         {
-          "Product": "Kinsta - Custom Plan 1100 sites",
+          "Product": "[Kinsta](https://kinsta.com/) - Custom Plan 1100 sites",
           "Type": "Hosting",
           "Price": "$82,500.00",
           "Quantity": 1,
@@ -238,21 +238,21 @@
           "Total": "$240.00"
         },
         {
-          "Product": "MemberPress",
+          "Product": "[MemberPress](https://memberpress.com/)",
           "Type": "Plugins",
           "Price": "$199.00",
           "Quantity": 1,
           "Total": "$199.00"
         },
         {
-          "Product": "Missive",
+          "Product": "[Missive](https://missiveapp.com/)",
           "Type": "Software",
           "Price": "$12.00",
           "Quantity": 12,
           "Total": "$144.00"
         },
         {
-          "Product": "Modern Tribe Community Events",
+          "Product": "[Modern Tribe Community Events](https://theeventscalendar.com/product/wordpress-community-events/)",
           "Type": "Plugins",
           "Price": "$62.00",
           "Quantity": 1,
@@ -266,14 +266,14 @@
           "Total": "$34.00"
         },
         {
-          "Product": "Modern Tribe Filter Bar",
+          "Product": "[Modern Tribe Filter Bar](https://theeventscalendar.com/product/wordpress-events-filterbar/)",
           "Type": "Plugins",
           "Price": "$62.00",
           "Quantity": 1,
           "Total": "$62.00"
         },
         {
-          "Product": "Modern Tribe The Event Calendar",
+          "Product": "[Modern Tribe The Event Calendar](https://theeventscalendar.com/product/wordpress-events-calendar-pro/)",
           "Type": "Plugins",
           "Price": "$525.00",
           "Quantity": 1,
@@ -294,14 +294,14 @@
           "Total": "$2,500.00"
         },
         {
-          "Product": "Phone",
+          "Product": "[Phone](https://fi.google.com)",
           "Type": "Other",
           "Price": "$120.00",
           "Quantity": "12",
           "Total": "$1440.00"
         },
         {
-          "Product": "Post Status",
+          "Product": "[Post Status](https://poststatus.com/)",
           "Type": "Community",
           "Price": "$99.00",
           "Quantity": 1,
@@ -315,14 +315,14 @@
           "Total": "$72000.00"
         },
         {
-          "Product": "Seanwes Community",
+          "Product": "[Seanwes Membership](https://seanwes.com/)",
           "Type": "Community",
           "Price": "$390.00",
           "Quantity": 1,
           "Total": "$390.00"
         },
         {
-          "Product": "SearchWP",
+          "Product": "[SearchWP](https://searchwp.com/)",
           "Type": "Plugins",
           "Price": "$249.00",
           "Quantity": 1,
@@ -336,7 +336,7 @@
           "Total": "$121.50"
         },
         {
-          "Product": "Statuspage (statuspage.io)",
+          "Product": "[Statuspage](https://www.statuspage.io/)",
           "Type": "Software",
           "Price": "$228.00",
           "Quantity": 1,
@@ -359,7 +359,7 @@
         {
           "Product": "Travel",
           "Type": "Community",
-          "Price": "$1000",
+          "Price": "$1000.00",
           "Quantity": 1,
           "Total": "$1000.00"
         },
@@ -490,7 +490,7 @@
           "Total": "$600.00"
         },
         {
-          "Product": "Xero",
+          "Product": "[Xero](https://www.xero.com)",
           "Type": "Software",
           "Price": "$37.05",
           "Quantity": "12",
