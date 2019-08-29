@@ -208,10 +208,10 @@
             </v-col>
             <v-col sm="12" md="2" class="px-3">
                 <h2>Results</h2>
-                <template v-if="version.income > 0">
-                <p><small>Income: ${{ version.income | formatLargeNumbers }} <br />Expenses: ${{ total( version.expenses ) | formatLargeNumbers }}</small></p>
-                    <div v-if="+version.income > +total( version.expenses )">
-                        <p><small>Revenue</small><br /><span class="green--text">+${{ ( version.income - total( version.expenses ) ).toFixed(2) | formatLargeNumbers }} / year</span></p>
+                <template v-if="income > 0">
+                <p><small>Income: ${{ income | formatLargeNumbers }} <br />Expenses: ${{ total( version.expenses ) | formatLargeNumbers }}</small></p>
+                    <div v-if="+income > +total( version.expenses )">
+                        <p><small>Revenue</small><br /><span class="green--text">+${{ ( income - total( version.expenses ) ).toFixed(2) | formatLargeNumbers }} / year</span></p>
                         <v-divider class="mb-3"></v-divider>
                         <p class="green--text">Healthy 👍</p>
                     </div>
@@ -348,6 +348,11 @@
             })
       },
       computed: {
+        income() {
+            if ( typeof this.version.income == 'string' ) {
+                return this.version.income.replace(/\,/gi, '')
+            }
+        },
         expensesByType() {
             if ( typeof this.version.expenses == 'object' ) {
                 return this.groupBy( this.version.expenses, 'Type' );
