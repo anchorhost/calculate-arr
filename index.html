@@ -256,7 +256,7 @@
       },
       methods: {
         sortByName() {
-            this.version.expenses.sort((a, b) => (a.Product > b.Product) ? 1 : -1);
+            this.version.expenses.sort((a, b) => (a.Product.toLowerCase().replace(/\[/gi, '') > b.Product.toLowerCase().replace(/\[/gi, '') ) ? 1 : -1);
         },
         total( items ) {
             total = 0;
