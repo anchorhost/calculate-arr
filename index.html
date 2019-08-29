@@ -52,7 +52,7 @@
                         prepend-icon="mdi-calendar"
                         readonly
                     ></v-text-field>
-                    <v-list dense color="#fafafa" style="padding:0px;">
+                    <v-list dense light color="grey lighten-5">
                             <v-subheader>ACTIONS</v-subheader>
                             <v-list-item @click="view_mode = !view_mode" dense>
                                 <v-list-item-action style="margin-right:4px">
@@ -124,7 +124,7 @@
                     </template>
                     <v-date-picker v-model="version.date_end" @input="menu_enddate = false; saveVersion()"></v-date-picker>
                 </v-menu>
-                    <v-list dense color="#fafafa" style="padding:0px;">
+                    <v-list dense light color="grey lighten-5">
                         <v-subheader>ACTIONS</v-subheader>
                         <v-list-item @click="view_mode = !view_mode" dense>
                             <v-list-item-action style="margin-right:4px">
