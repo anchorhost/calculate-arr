@@ -52,8 +52,26 @@
                         prepend-icon="mdi-calendar"
                         readonly
                     ></v-text-field>
-                    <v-btn @click="view_mode = !view_mode" block class="my-2" small>Edit Mode</v-btn>
-                    <v-btn @click="exportJSON" block class="my-2" small>Export</v-btn>
+                    <v-list dense color="#fafafa" style="padding:0px;">
+                            <v-subheader>ACTIONS</v-subheader>
+                            <v-list-item @click="view_mode = !view_mode" dense>
+                                <v-list-item-action style="margin-right:4px">
+                                    <v-icon small>mdi-pencil</v-icon>
+                                </v-list-item-action>
+                                <v-list-item-content>
+                                    <v-list-item-title>Edit Mode</v-list-item-title>
+                                </v-list-item-content>
+                            </v-list-item>
+                            <v-divider></v-divider>
+                            <v-list-item @click="exportJSON" dense>
+                                <v-list-item-action style="margin-right:4px">
+                                    <v-icon small>mdi-content-save</v-icon>
+                                </v-list-item-action>
+                                <v-list-item-content>
+                                    <v-list-item-title>Export</v-list-item-title>
+                                </v-list-item-content>
+                            </v-list-item>
+                        </v-list>
                 </template>
                 <template v-else>
                 <v-text-field v-model="name" label="Business Name"></v-text-field>
@@ -106,11 +124,53 @@
                     </template>
                     <v-date-picker v-model="version.date_end" @input="menu_startdate = false; saveVersion()"></v-date-picker>
                 </v-menu>
-                    <v-btn @click="view_mode = !view_mode" block class="my-2" small>View Mode</v-btn>
-                    <v-btn @click="sortByName" block class="my-2" small>Sort expenses</v-btn>
-                    <v-btn @click="duplicateVersion" block class="my-2" small>Duplicate version</v-btn>
-                    <v-btn @click="deleteVersion" block class="my-2" small>Delete version</v-btn>
-                    <v-btn @click="exportJSON" block class="my-2" small>Export</v-btn>
+                    <v-list dense color="#fafafa" style="padding:0px;">
+                        <v-subheader>ACTIONS</v-subheader>
+                        <v-list-item @click="view_mode = !view_mode" dense>
+                            <v-list-item-action style="margin-right:4px">
+                                <v-icon small>mdi-eye</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>View Mode</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <v-divider></v-divider>
+                        <v-list-item @click="exportJSON" dense>
+                            <v-list-item-action style="margin-right:4px">
+                                <v-icon small>mdi-content-save</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>Export</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <v-subheader>SELECTED VERSION</v-subheader>
+                        <v-list-item @click="sortByName" dense>
+                            <v-list-item-action style="margin-right:4px">
+                                <v-icon small>mdi-sort-alphabetical</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>Sort Expenses</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <v-divider></v-divider>
+                        <v-list-item @click="duplicateVersion" dense>
+                            <v-list-item-action style="margin-right:4px">
+                                <v-icon small>mdi-content-copy</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>Duplicate Version</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <v-divider></v-divider>
+                        <v-list-item @click="deleteVersion" dense>
+                            <v-list-item-action style="margin-right:4px">
+                                <v-icon small>mdi-delete</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>Delete Version</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-list>
                 </template>
             </v-col>
             <v-col sm="12" md="8" class="px-3">
