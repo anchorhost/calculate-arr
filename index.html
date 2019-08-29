@@ -285,9 +285,10 @@
             this.populateVersions();
         },
         duplicateVersion() {
-            this.versions.unshift( this.versions[ this.selected_version ] );
-            this.populateVersions();
+            this.versions.unshift( JSON.parse(JSON.stringify( this.versions[ this.selected_version ] ) ) );
+            this.version = this.versions[0];
             this.selected_version = 0;
+            this.populateVersions();
         },
         changeVersion() {
             this.version = this.versions[ this.selected_version ];
