@@ -18,7 +18,7 @@
         color="blue darken-3"
         dark
         >
-        <v-toolbar-title>Calculate ARR</v-toolbar-title>
+        <v-toolbar-title>Calculate ARR for <strong>{{ name }}</strong></v-toolbar-title>
         <div class="flex-grow-1"></div>
         
       </v-app-bar>
@@ -31,7 +31,6 @@
             <v-col sm="12" md="2" class="px-2">
                 <h2>Income</h2>
                 <template v-if="view_mode">
-                    <v-text-field v-model="name" label="Business Name" readonly></v-text-field>
                     <v-select
                         :items='version_options'
                         v-model="selected_version"
@@ -57,7 +56,7 @@
                     <v-btn @click="exportJSON" block class="my-2" small>Export</v-btn>
                 </template>
                 <template v-else>
-                <v-text-field v-model="name" label="Business Name" readonly></v-text-field>
+                <v-text-field v-model="name" label="Business Name"></v-text-field>
                 <v-select
                     :items='version_options'
                     v-model="selected_version"
