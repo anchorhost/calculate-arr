@@ -187,12 +187,14 @@
                     <div v-for="type in expensesTypes">
                         <p class="ma-3">&nbsp;</p>
                         <v-data-table
-                            :headers='[{text:"Product",value:"product",width:"300px",sortable:false},{"text":"Quantity","value":"quantity",sortable:false},{"text":"Price","value":"price",sortable:false},{"text":"Total","value":"total",sortable:false}]'
+                            :headers='[{text:"Product",value:"product",width:"300px"},{"text":"Quantity","value":"quantity"},{"text":"Price","value":"price"},{"text":"Total","value":"total"}]'
                             :items="version.expenses"
                             :custom-filter="filterType"
+                            :custom-sort="customSort"
                             :search='type'
                             :items-per-page="-1"
                             hide-default-footer
+                            must-sort
                             dense
                             class="elevation-1"
                             style="position:relative"
@@ -220,12 +222,14 @@
                         </template>
                         </v-data-table>
                         <v-data-table
-                            :headers='[{text:"Product",value:"product",width:"300px",sortable:false,sortable:false},{"text":"Type","value":"type",sortable:false},{"text":"Quantity","value":"quantity",sortable:false},{"text":"Price","value":"price",sortable:false},{"text":"Total","value":"total",sortable:false},{"text":"","value":"actions",sortable:false}]'
+                            :headers='[{text:"Product",value:"product",width:"300px"},{"text":"Type","value":"type",sortable:false},{"text":"Quantity","value":"quantity"},{"text":"Price","value":"price"},{"text":"Total","value":"total"},{"text":"","value":"actions",sortable:false}]'
                             :items="version.expenses"
                             :custom-filter="filterType"
+                            :custom-sort="customSort"
                             :search='type'
                             :items-per-page="-1"
                             hide-default-footer
+                            must-sort
                             dense
                             class="elevation-1"
                             style="position:relative"
@@ -382,6 +386,39 @@
         },
         filterType( value, search, item ) {
             return item.Type == search
+        },
+        customSort(items, index, direction ) {
+            items.sort((a, b) => {
+                if (index.includes("product")) {
+                    if ( direction.includes(true) ) {
+                        return (a.Product.toLowerCase().replace(/\[/gi, '') > b.Product.toLowerCase().replace(/\[/gi, '') ) ? 1 : -1
+                    } else {
+                        return (a.Product.toLowerCase().replace(/\[/gi, '') < b.Product.toLowerCase().replace(/\[/gi, '') ) ? 1 : -1
+                    }
+                }
+                if (index.includes("quantity")) {
+                    if ( direction.includes(true) ) {
+                        return a.Quantity - b.Quantity
+                    } else {
+                        return b.Quantity - a.Quantity
+                    }
+                }
+                if (index.includes("price")) {
+                    if ( direction.includes(true) ) {
+                        return +a.Price.replace(/\,/gi, '').replace(/\$/gi, '') - +b.Price.replace(/\,/gi, '').replace(/\$/gi, '')
+                    } else {
+                        return +b.Price.replace(/\,/gi, '').replace(/\$/gi, '') - +a.Price.replace(/\,/gi, '').replace(/\$/gi, '')
+                    }
+                }
+                if (index.includes("total")) {
+                    if ( direction.includes(true) ) {
+                        return +a.Total.replace(/\,/gi, '').replace(/\$/gi, '') - +b.Total.replace(/\,/gi, '').replace(/\$/gi, '')
+                    } else {
+                        return +b.Total.replace(/\,/gi, '').replace(/\$/gi, '') - +a.Total.replace(/\,/gi, '').replace(/\$/gi, '')
+                    }
+                }
+            });
+            return items;
         },
         exportJSON() {
             this.$refs.export_json.download = "data.json";
