@@ -254,7 +254,7 @@
                                 <v-text-field label="" v-model="item.Product" :value="item.Product" height="18" style="font-size: 12px;letter-spacing: -0.4px;"></v-text-field>
                             </template>
                             <template v-slot:item.quantity="{ item }">
-                                <v-text-field label="" v-model="item.Quantity" @input="calculateTotal( item )" :value="item.Quantity" height="18" style="width:28px"></v-text-field>
+                                <v-text-field label="" v-model="item.Quantity" @input="calculateTotal( item )" :value="item.Quantity" type="number" height="18" style="width:42px"></v-text-field>
                             </template>
                             <template v-slot:item.price="{ item }">
                                 <v-text-field label="" v-model="item.Price" @input="calculateTotal( item )" :value="item.Price" height="18" style="width:78px"></v-text-field>
