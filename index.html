@@ -313,6 +313,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
   <script>
+    const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     new Vue({
       el: '#app',
       data: {
@@ -430,8 +431,14 @@
         },
         populateVersions() {
             this.version_options = this.versions.map( ( v, i ) => {
-                item = { value: i, text: v.date_end };
-                return item;
+                month_index = new Date( v.date_end ).getMonth() + 1
+                if ( month_index == 12 ) {
+                    month_index = 0
+                }
+                month = months[month_index]
+                date_name = `${month} ${v.date_end.substring( 0, 4)} Budget`
+                item = { value: i, text: date_name }
+                return item
             })
         },
         compiledMarkdown( string ) {
