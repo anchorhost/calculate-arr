@@ -13,24 +13,38 @@
 </head>
 <body>
   <div id="app">
-    <v-app>
-       <v-app-bar
-        color="blue darken-3"
-        dark
-        >
-        <v-toolbar-title>Calculate ARR for <strong>{{ name }}</strong></v-toolbar-title>
-        <div class="flex-grow-1"></div>
-        
+    <v-app v-cloak>
+       <v-app-bar color="blue darken-3" dark app extended>
+            <v-toolbar-title>Calculate ARR for <strong>{{ name }}</strong></v-toolbar-title>
+            <template v-slot:extension>
+            <v-toolbar light dense flat>
+                Is your Annual Recurring Revenue (ARR) business healthy?
+                <v-spacer></v-spacer>
+                <div style="width:180px;position:relative;margin-top:20px">
+                    <v-select
+                        v-model="mode"
+                        :items='[{"text":"View Mode","value":"view","icon":"mdi-eye"},{"text":"Edit Mode","value":"edit","icon":"mdi-pencil"},{"text":"Report Mode","value":"report","icon":"mdi-chart-bar"}]'
+                        label=""
+                        @change="changeMode"
+                        dense
+                    >
+                    <template v-slot:selection="data">
+                        <v-icon class="mr-2">{{ data.item.icon }}</v-icon> {{ data.item.text }}
+                    </template>
+                    <template v-slot:item="data">
+                        <v-icon class="mr-2">{{ data.item.icon }}</v-icon> {{ data.item.text }}
+                    </template>
+                    </v-select>
+                </div>
+            </v-toolbar>
+            </template>
       </v-app-bar>
-      <v-toolbar dense class="mb-5">
-            Is your Annual Recurring Revenue (ARR) business healthy?
-      </v-toolbar>
-      <v-content>
-        <v-container>
+      <v-content class="mt-5">
+        <v-container v-show="mode == 'view' || mode == 'edit'">
             <v-row no-gutters>
             <v-col sm="12" md="2" class="px-2">
                 <h2>Income</h2>
-                <template v-if="view_mode">
+                <template v-if="mode == 'view'">
                     <v-select
                         :items='version_options'
                         v-model="selected_version"
@@ -52,17 +66,8 @@
                         prepend-icon="mdi-calendar"
                         readonly
                     ></v-text-field>
-                    <v-list dense light color="grey lighten-5">
+                    <v-list dense light color="lighten-5">
                             <v-subheader>ACTIONS</v-subheader>
-                            <v-list-item @click="view_mode = !view_mode" dense>
-                                <v-list-item-action style="margin-right:4px">
-                                    <v-icon small>mdi-pencil</v-icon>
-                                </v-list-item-action>
-                                <v-list-item-content>
-                                    <v-list-item-title>Edit Mode</v-list-item-title>
-                                </v-list-item-content>
-                            </v-list-item>
-                            <v-divider></v-divider>
                             <v-list-item @click="exportJSON" dense>
                                 <v-list-item-action style="margin-right:4px">
                                     <v-icon small>mdi-content-save</v-icon>
@@ -73,7 +78,7 @@
                             </v-list-item>
                         </v-list>
                 </template>
-                <template v-else>
+                <template v-if='mode == "edit"'>
                 <v-text-field v-model="name" label="Business Name"></v-text-field>
                 <v-select
                     :items='version_options'
@@ -124,17 +129,8 @@
                     </template>
                     <v-date-picker v-model="version.date_end" @input="menu_enddate = false; saveVersion()"></v-date-picker>
                 </v-menu>
-                    <v-list dense light color="grey lighten-5">
+                    <v-list dense light color="lighten-5">
                         <v-subheader>ACTIONS</v-subheader>
-                        <v-list-item @click="view_mode = !view_mode" dense>
-                            <v-list-item-action style="margin-right:4px">
-                                <v-icon small>mdi-eye</v-icon>
-                            </v-list-item-action>
-                            <v-list-item-content>
-                                <v-list-item-title>View Mode</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-divider></v-divider>
                         <v-list-item @click="exportJSON" dense>
                             <v-list-item-action style="margin-right:4px">
                                 <v-icon small>mdi-content-save</v-icon>
@@ -198,7 +194,7 @@
                             dense
                             class="elevation-1"
                             style="position:relative"
-                            v-if="view_mode"
+                            v-if="mode == 'view'"
                         >
                         <template v-slot:top="{ items }">
                             <div style="position:absolute;top:-25px;width:100%;">
@@ -233,7 +229,7 @@
                             dense
                             class="elevation-1"
                             style="position:relative"
-                            v-else
+                            v-if="mode == 'edit'"
                         >
                             <template v-slot:top="{ items }">
                                 <div style="position:absolute;top:-25px;width:100%;">
@@ -295,20 +291,25 @@
             </v-flex>
             </v-layout>
         </v-container>
+        <v-container v-show="mode == 'report'" fill-height>
+            <v-layout>
+            <v-row>
+                <v-col sm="12" class="px-2">
+                    <h2>Report</h2>
+                    <div id="chart"></div>
+                </v-col>
+            </v-row>
+            </v-layout>
+        </v-container>
       </v-content>
-      <v-footer
-        absolute
-        padless
-        >
-        <v-col
-            class="text-center"
-            cols="12"
-        >
+      <v-footer>
+        <v-col class="text-center" cols="12">
            <small>Made with ❤️ by <a href="https://austinginder.com" target="_blank">Austin Ginder</a> code on <a href="https://github.com/anchorhost/calculate-arr/">Github</a> - v{{ calculate_arr_version }}</small>
         </v-col>
         </v-footer>
     </v-app>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.1.0/dist/frappe-charts.min.iife.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
@@ -317,8 +318,8 @@
     new Vue({
       el: '#app',
       data: {
+        mode: "view",
         calculate_arr_version: "1.1",
-        view_mode: true,
         menu_startdate: false,
         menu_enddate: false,
         name: "",
@@ -444,6 +445,37 @@
         compiledMarkdown( string ) {
             return marked(string).replace(/<a href="/gi, '<a target="_blank" href="');
         },
+        changeMode() {
+            if( this.mode == "report" ) {
+                this.generateChartData();
+            }
+        },
+        generateChartData() {
+            all_expenses = []
+            data = { expenses: [], revenue: [] }
+            this.versions.forEach( v => {
+                data.expenses.push( ( this.total ( v.expenses ) ) )
+                data.revenue.push( parseFloat( v.income.replace(/\,/gi, '').replace(/\$/gi, '') ) )
+            });
+            chart_data = {
+                labels: this.version_options.map( v => v.text ).reverse(),
+                datasets: [
+                    { name: "Revenue", values: data.revenue.reverse() },
+                    { name: "Expenses", values: data.expenses.reverse() }
+                ]
+            }
+            setTimeout(() => {
+                let chart = new frappe.Chart( "#chart", {
+                    data: chart_data,
+                    type: 'bar',
+                    colors: ['#2196f3', '#1565c0'],
+                    height: 250,
+                    tooltipOptions: {
+                        formatTooltipY: d => "$" + this.$options.filters.formatLargeNumbers( d ),
+                    }
+                });
+            }, 1000);   
+        }
       },
       filters: {
         formatLargeNumbers: function (number) {
