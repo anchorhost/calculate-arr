@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0] - 2020-02-01
+### Added
+- Report mode
+- Mode dropdown selections
+
+### Changed
+- Improved version labels with friendly month names
+- Improved loading
+- Various display fixes
+
 ## [1.1.0] - 2019-08-30
 ### Added
 - Markdown support for expense names
