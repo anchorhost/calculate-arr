@@ -5,6 +5,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta charset="utf-8">
   <style>
     .v-application td > p:last-child {
         margin-bottom: 0px;
@@ -105,7 +106,6 @@
                     :nudge-right="40"
                     transition="scale-transition"
                     offset-y
-                    full-width
                     min-width="290px"
                 >
                     <template v-slot:activator="{ on }">
@@ -125,7 +125,6 @@
                     :nudge-right="40"
                     transition="scale-transition"
                     offset-y
-                    full-width
                     min-width="290px"
                 >
                     <template v-slot:activator="{ on }">
@@ -281,8 +280,6 @@
                         </v-data-table>
                         <p class="ma-3">&nbsp;</p>
                     </div>
-                    <p>&nbsp;</p>
-                    <v-divider class="mb-5"></v-divider>
             </v-col>
             <v-col sm="12" md="2" class="px-3">
                 <h2>Results</h2>
