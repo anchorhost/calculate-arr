@@ -9,6 +9,16 @@
     .v-application td > p:last-child {
         margin-bottom: 0px;
     }
+    .v-toolbar__extension {
+        padding: 0px;
+    }
+    [v-cloak] > * { display:none; }
+    [v-cloak]::before {
+        padding: 20px;
+        content: "Loading...";
+        display: block;
+        font-family: Roboto,sans-serif;
+    }
   </style>
 </head>
 <body>
