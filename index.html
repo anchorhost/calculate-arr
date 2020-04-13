@@ -50,8 +50,8 @@
             </v-toolbar>
             </template>
       </v-app-bar>
-      <v-content class="mt-5">
-        <v-container v-show="mode == 'view' || mode == 'edit'">
+      <v-content class="mt-5" style="background:#fafafa !important">
+        <v-container v-show="mode == 'view' || mode == 'edit'" class="grey lighten-5">
             <v-row no-gutters>
             <v-col sm="12" md="2" class="px-2">
                 <h2>Income</h2>
@@ -77,7 +77,7 @@
                         prepend-icon="mdi-calendar"
                         readonly
                     ></v-text-field>
-                    <v-list dense light color="lighten-5">
+                    <v-list dense light color="grey lighten-5">
                             <v-subheader>ACTIONS</v-subheader>
                             <v-list-item @click="exportJSON" dense>
                                 <v-list-item-action style="margin-right:4px">
@@ -138,7 +138,7 @@
                     </template>
                     <v-date-picker v-model="version.date_end" @input="menu_enddate = false; saveVersion()"></v-date-picker>
                 </v-menu>
-                    <v-list dense light color="lighten-5">
+                    <v-list dense light color="grey lighten-5">
                         <v-subheader>ACTIONS</v-subheader>
                         <v-list-item @click="exportJSON" dense>
                             <v-list-item-action style="margin-right:4px">
