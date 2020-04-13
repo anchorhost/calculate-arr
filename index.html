@@ -21,6 +21,12 @@
         display: block;
         font-family: Roboto,sans-serif;
     }
+    .v-data-table td, .v-data-table th {
+        padding: 0px 10px;
+    }
+    .v-data-table {
+        position: relative;
+    }
   </style>
 </head>
 <body>
@@ -203,11 +209,10 @@
                             must-sort
                             dense
                             class="elevation-1"
-                            style="position:relative"
                             v-if="mode == 'view'"
                         >
                         <template v-slot:top="{ items }">
-                            <div style="position:absolute;top:-25px;width:100%;">
+                            <div style="position:absolute;top:-30px;width:100%;">
                                 <v-layout>
                                     <v-flex :class="'type-'+type"></a>{{ type }}</v-flex>
                                     <v-flex class="text-right">
@@ -238,11 +243,10 @@
                             must-sort
                             dense
                             class="elevation-1"
-                            style="position:relative"
                             v-if="mode == 'edit'"
                         >
                             <template v-slot:top="{ items }">
-                                <div style="position:absolute;top:-25px;width:100%;">
+                                <div style="position:absolute;top:-30px;width:100%;">
                                     <v-layout>
                                         <v-flex :class="'type-'+type">{{ type }}</v-flex>
                                         <v-flex class="text-right">
@@ -261,16 +265,16 @@
                                 </div>
                             </template>
                             <template v-slot:item.product="{ item }">
-                                <v-text-field label="" v-model="item.Product" :value="item.Product" height="18" style="font-size: 12px;letter-spacing: -0.4px;"></v-text-field>
+                                <v-text-field label="" v-model="item.Product" :value="item.Product" height="18" style="font-size: 13px;letter-spacing: -0.4px;"></v-text-field>
                             </template>
                             <template v-slot:item.quantity="{ item }">
-                                <v-text-field label="" v-model="item.Quantity" @input="calculateTotal( item )" :value="item.Quantity" type="number" height="18" style="width:42px"></v-text-field>
+                                <v-text-field label="" v-model="item.Quantity" @input="calculateTotal( item )" :value="item.Quantity" type="number" height="18" style="font-size: 13px;letter-spacing: -0.4px;width:42px"></v-text-field>
                             </template>
                             <template v-slot:item.price="{ item }">
-                                <v-text-field label="" v-model="item.Price" @input="calculateTotal( item )" :value="item.Price" height="18" style="width:78px"></v-text-field>
+                                <v-text-field label="" v-model="item.Price" @input="calculateTotal( item )" :value="item.Price" height="18" style="font-size: 13px;letter-spacing: -0.4px;width:78px"></v-text-field>
                             </template>
                             <template v-slot:item.type="{ item }">
-                                <v-select label="" :items="expensesTypes" v-model="item.Type" :value="item.Type" dense height="18" style="width:96px"></v-select>
+                                <v-select label="" :items="expensesTypes" dense v-model="item.Type" :value="item.Type" dense height="18" style="font-size: 13px;letter-spacing: -0.4px;width:100px"></v-select>
                             </template>
                             <template v-slot:item.total="{ item }">
                                 {{ item.Total }}
