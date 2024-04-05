@@ -21,7 +21,7 @@
         display: block;
         font-family: Roboto,sans-serif;
     }
-    .v-data-table td, .v-data-table th {
+    .v-data-table>.v-data-table__wrapper>table>tbody>tr>td, .v-data-table th {
         padding: 0px 10px;
     }
     .v-data-table {
@@ -57,7 +57,7 @@
             </v-toolbar>
             </template>
       </v-app-bar>
-      <v-content class="mt-5" style="background:#fafafa !important">
+      <v-main class="mt-5" style="background:#fafafa !important">
         <v-container v-show="mode == 'view' || mode == 'edit'" class="grey lighten-5">
             <v-row no-gutters>
             <v-col sm="12" md="2" class="px-2">
@@ -86,7 +86,7 @@
                     ></v-text-field>
                     <v-list dense light color="grey lighten-5">
                             <v-subheader>ACTIONS</v-subheader>
-                            <v-list-item @click="exportJSON" dense>
+                            <v-list-item @click="exportJSON">
                                 <v-list-item-action style="margin-right:4px">
                                     <v-icon small>mdi-content-save</v-icon>
                                 </v-list-item-action>
@@ -147,7 +147,7 @@
                 </v-menu>
                     <v-list dense light color="grey lighten-5">
                         <v-subheader>ACTIONS</v-subheader>
-                        <v-list-item @click="exportJSON" dense>
+                        <v-list-item @click="exportJSON">
                             <v-list-item-action style="margin-right:4px">
                                 <v-icon small>mdi-content-save</v-icon>
                             </v-list-item-action>
@@ -156,7 +156,7 @@
                             </v-list-item-content>
                         </v-list-item>
                         <v-subheader>SELECTED VERSION</v-subheader>
-                        <v-list-item @click="newCategory" dense>
+                        <v-list-item @click="newCategory">
                             <v-list-item-action style="margin-right:4px">
                                 <v-icon small>mdi-plus-box</v-icon>
                             </v-list-item-action>
@@ -165,7 +165,7 @@
                             </v-list-item-content>
                         </v-list-item>
                         <v-divider></v-divider>
-                        <v-list-item @click="sortByName" dense>
+                        <v-list-item @click="sortByName">
                             <v-list-item-action style="margin-right:4px">
                                 <v-icon small>mdi-sort-alphabetical</v-icon>
                             </v-list-item-action>
@@ -174,7 +174,7 @@
                             </v-list-item-content>
                         </v-list-item>
                         <v-divider></v-divider>
-                        <v-list-item @click="duplicateVersion" dense>
+                        <v-list-item @click="duplicateVersion">
                             <v-list-item-action style="margin-right:4px">
                                 <v-icon small>mdi-content-copy</v-icon>
                             </v-list-item-action>
@@ -183,7 +183,7 @@
                             </v-list-item-content>
                         </v-list-item>
                         <v-divider></v-divider>
-                        <v-list-item @click="deleteVersion" dense>
+                        <v-list-item @click="deleteVersion">
                             <v-list-item-action style="margin-right:4px">
                                 <v-icon small>mdi-delete</v-icon>
                             </v-list-item-action>
