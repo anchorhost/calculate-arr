@@ -436,6 +436,7 @@
             return items;
         },
         exportJSON() {
+            this.saveVersion()
             this.$refs.export_json.download = "data.json";
             this.$refs.export_json.href = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
                 name: this.name,
