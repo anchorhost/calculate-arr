@@ -459,7 +459,7 @@
             })
         },
         compiledMarkdown( string ) {
-            return marked(string).replace(/<a href="/gi, '<a target="_blank" href="');
+            return marked.parse(string).replace(/<a href="/gi, '<a target="_blank" href="');
         },
         changeMode() {
             if( this.mode == "report" ) {
