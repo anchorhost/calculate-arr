@@ -214,7 +214,7 @@
                         <template v-slot:top="{ items }">
                             <div style="position:absolute;top:-30px;width:100%;">
                                 <v-layout>
-                                    <v-flex :class="'type-'+type"></a>{{ type }}</v-flex>
+                                    <v-flex :class="'type-'+type">{{ type }} <small class="ml-3">{{ parseFloat( total(items) / total( version.expenses ) * 100 ).toFixed(2) }}%</small></v-flex>
                                     <v-flex class="text-right">
                                         <small>{{ items.length }} expenses totaling</small> &nbsp; <strong>${{ total(items) | formatLargeNumbers }}</strong>
                                     </v-flex>
